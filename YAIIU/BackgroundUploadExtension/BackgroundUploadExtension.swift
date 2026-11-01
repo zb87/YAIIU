@@ -1203,7 +1203,8 @@ final class BackgroundUploadExtensionCore {
 
     private func shouldUpload(_ resource: PHAssetResource) -> Bool {
         switch resource.type {
-        case .photo, .fullSizePhoto, .video, .fullSizeVideo, .alternatePhoto:
+        case .photo, .fullSizePhoto, .video, .fullSizeVideo, .alternatePhoto,
+             .pairedVideo, .fullSizePairedVideo:
             return true
         default:
             return false
@@ -1224,7 +1225,8 @@ final class BackgroundUploadExtensionCore {
 
         if uti.contains("video") || uti.contains("movie") || uti.contains("mp4")
             || uti.contains("quicktime") || resource.type == .video
-            || resource.type == .fullSizeVideo
+            || resource.type == .fullSizeVideo || resource.type == .pairedVideo
+            || resource.type == .fullSizePairedVideo
         {
             return "video"
         }

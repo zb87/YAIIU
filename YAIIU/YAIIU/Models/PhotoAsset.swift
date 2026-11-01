@@ -102,7 +102,7 @@ struct AssetResource: Identifiable {
     }
     
     var isVideo: Bool {
-        resource.type == .video || resource.type == .fullSizeVideo
+        resource.type == .video || resource.type == .fullSizeVideo || resource.type == .pairedVideo || resource.type == .fullSizePairedVideo
     }
     
     var resourceTypeString: String {

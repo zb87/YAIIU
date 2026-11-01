@@ -1430,6 +1430,8 @@ final class PhotoLibraryManager: NSObject, ObservableObject, PHPhotoLibraryChang
             
             let isVideo = resource.type == .video ||
                           resource.type == .fullSizeVideo ||
+                          resource.type == .pairedVideo ||
+                          resource.type == .fullSizePairedVideo ||
                           uti.contains("video") ||
                           uti.contains("movie")
             
